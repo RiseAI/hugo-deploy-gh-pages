@@ -76,6 +76,8 @@ if [[ "${TARGET_BRANCH}" != "master" ]]; then
   git checkout -b ${TARGET_BRANCH}
 fi
 
+git config remote.origin.url 'https://${{ TOKEN }}@github.com/${{ github.repository }}'
+
 git add . && \
 git commit -m "Auto publishing site from ${GITHUB_REPOSITORY}@${HASH}" && \
 git push --force "${TARGET_REPO_URL}" ${TARGET_BRANCH}
