@@ -3,6 +3,9 @@
 set -e
 set -o pipefail
 
+echo "PATH ="
+echo $PATH
+
 if [[ -n "${TOKEN}" ]]; then
     GITHUB_TOKEN=${TOKEN}
 fi

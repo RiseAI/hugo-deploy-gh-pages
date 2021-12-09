@@ -13,7 +13,9 @@ RUN apt-get update && \
 	tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz && \
 	rm go1.15.6.linux-amd64.tar.gz && \
 	export PATH=$PATH:/usr/local/go/bin
-	
+
+ENV PATH="/usr/local/go/bin:${PATH}" 
+
 COPY action.sh /usr/bin/action.sh
 
 ENTRYPOINT ["action.sh"]
