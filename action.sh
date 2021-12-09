@@ -80,9 +80,9 @@ if [[ "${TARGET_BRANCH}" != "master" ]]; then
   git checkout -b ${TARGET_BRANCH}
 fi
 
-git config remote.origin.url "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}"
+# git config remote.origin.url "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}"
 
-STRING="https://${GITHUB_TOKEN}@github.com/${GITHUB_ACTOR}/${GITHUB_REPOSITORY}.git"
+STRING="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 echo "STRING ="
 echo $STRING
 
