@@ -81,10 +81,11 @@ if [[ "${TARGET_BRANCH}" != "master" ]]; then
 fi
 
 
-STRING="https://${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+STRING="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 echo "STRING ="
 echo $STRING
-git config remote.origin.url ${STRING}
+# git config remote.origin.url ${STRING}
+git config --list
 
 git add . && \
 git commit -m "Auto publishing site from ${GITHUB_REPOSITORY}@${HASH}" && \
