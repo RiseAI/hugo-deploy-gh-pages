@@ -7,7 +7,11 @@ echo "PATH ="
 echo $PATH
 
 if [[ -n "${TOKEN}" ]]; then
-    GITHUB_TOKEN=${TOKEN}
+TOKEN=${TOKEN}
+fi
+
+if [[ -n "${GITHUB_TOKEN}" ]]; then
+    GITHUB_TOKEN=${GITHUB_TOKEN}
 fi
 
 if [[ -z "${GITHUB_TOKEN}" ]]; then
@@ -76,7 +80,7 @@ if [[ "${TARGET_BRANCH}" != "master" ]]; then
   git checkout -b ${TARGET_BRANCH}
 fi
 
-git config remote.origin.url "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}"
+git config remote.origin.url "https://${TOKEN}@github.com/${GITHUB_REPOSITORY}"
 
 git add . && \
 git commit -m "Auto publishing site from ${GITHUB_REPOSITORY}@${HASH}" && \
