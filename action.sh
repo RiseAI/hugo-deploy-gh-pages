@@ -82,11 +82,12 @@ fi
 
 git config remote.origin.url "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}"
 
-echo "Trick to echo GitHub Actions Secret:  "
-echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'
+STRING="https://${GITHUB_TOKEN}@github.com/${GITHUB_ACTOR}/${GITHUB_REPOSITORY}.git"
+echo "STRING ="
+echo $STRING
 
 git add . && \
 git commit -m "Auto publishing site from ${GITHUB_REPOSITORY}@${HASH}" && \
-git push --force "${TARGET_REPO_URL}" ${TARGET_BRANCH}
+git push --force ${STRING} ${TARGET_BRANCH}
 
 echo "Complete"
