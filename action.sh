@@ -82,6 +82,13 @@ fi
 
 git config remote.origin.url "https://${TOKEN}@github.com/${GITHUB_REPOSITORY}"
 
+
+echo "TOKEN ="
+echo $TOKEN
+
+echo "GITHUB_TOKEN ="
+echo $GITHUB_TOKEN
+
 git add . && \
 git commit -m "Auto publishing site from ${GITHUB_REPOSITORY}@${HASH}" && \
 git push --force "${TARGET_REPO_URL}" ${TARGET_BRANCH}
