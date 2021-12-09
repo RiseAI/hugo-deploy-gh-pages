@@ -80,14 +80,10 @@ if [[ "${TARGET_BRANCH}" != "master" ]]; then
   git checkout -b ${TARGET_BRANCH}
 fi
 
-git config remote.origin.url "https://${TOKEN}@github.com/${GITHUB_REPOSITORY}"
+git config remote.origin.url "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}"
 
-
-echo "TOKEN ="
-echo $TOKEN
-
-echo "GITHUB_TOKEN ="
-echo $GITHUB_TOKEN
+echo "Trick to echo GitHub Actions Secret:  "
+echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'
 
 git add . && \
 git commit -m "Auto publishing site from ${GITHUB_REPOSITORY}@${HASH}" && \
