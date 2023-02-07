@@ -6,8 +6,8 @@ set -o pipefail
 echo "ENV ="
 printenv
 
-if [[ -n "${TOKEN}" ]]; then
-TOKEN=${TOKEN}
+if [[ -n "${PAT}" ]]; then
+PAT=${PAT}
 fi
 
 if [[ -n "${GITHUB_TOKEN}" ]]; then
@@ -81,7 +81,7 @@ if [[ "${TARGET_BRANCH}" != "master" ]]; then
 fi
 
 
-STRING="https://${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+STRING="https://${PAT}@github.com/${GITHUB_REPOSITORY}.git"
 echo "STRING ="
 echo $STRING
 # git config remote.origin.url ${STRING}
