@@ -81,7 +81,7 @@ if [[ "${TARGET_BRANCH}" != "master" ]]; then
 fi
 
 
-STRING="https://${PAT}@github.com/${GITHUB_REPOSITORY}.git"
+STRING="https://${PAT}@github.com/${TARGET_REPO}.git"
 echo "STRING ="
 echo $STRING
 # git config remote.origin.url ${STRING}
