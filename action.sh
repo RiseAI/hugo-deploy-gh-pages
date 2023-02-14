@@ -88,7 +88,7 @@ echo $STRING
 git config --list
 
 git add . && \
-git commit -m "Auto publishing site from ${GITHUB_REPOSITORY}@${HASH}" && \
-git push --force ${TARGET_REPO} ${TARGET_BRANCH}
+git commit -m "Auto publishing site from ${TARGET_REPO}@${HASH}" && \
+git push --force ${STRING} ${TARGET_BRANCH}
 
 echo "Complete"
